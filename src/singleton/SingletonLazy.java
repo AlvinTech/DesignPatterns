@@ -6,7 +6,14 @@ package singleton;
 public class SingletonLazy {
     private static SingletonLazy instance ;
 
-    private SingletonLazy(){}
+    private String SingletonDate;
+    private SingletonLazy(){
+        SingletonDate = "This is Singleton class";
+    }
+
+    public String getSingletonDate(){
+        return SingletonDate;
+    }
 
     public SingletonLazy getInstance(){
         if(null == instance){
