@@ -105,7 +105,7 @@ JVM在类的初始化阶段（即在Class被加载后，且被线程使用之前
 这个方案之所奏效，是因为内部类 InstanceHolder 将只被装载一次，所以只会创建一个instance对象。
 
 参考文献：
-1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization](http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization)
-2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
+1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization (http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization)
+2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html (http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
 3. 秦小波. 设计模式之禅[M]. 机械工业出版社, 2014.
 4. (美)沙洛维(Shalloway, A. ), (美)特罗特(Trott,等. 设计模式解析: 第2版 : 修订版[M]. 人民邮电出版社, 2012.
