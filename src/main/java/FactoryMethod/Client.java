@@ -1,5 +1,6 @@
 package FactoryMethod;
 
+
 import singleton.SingletonLazy;
 
 /**
