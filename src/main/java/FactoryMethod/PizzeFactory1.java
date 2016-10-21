@@ -1,13 +1,12 @@
 package FactoryMethod;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Alvin on 16/10/10.
+ * Created by Alvin on 16/10/13.
  */
-public class PizzeFactory {
+public class PizzeFactory1 {
     private  static final Map<String,Pizze> pMap = new HashMap<String,Pizze>();
     public static synchronized Pizze  createPizze(Class clazz) throws Exception {
         if(pMap.containsKey(clazz.getSimpleName())){

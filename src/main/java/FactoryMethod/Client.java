@@ -18,12 +18,12 @@ public class Client {
         SingletonLazy instance =  SingletonFactory.getInstance();
         System.out.println(instance.getSingletonDate());
 
-        Pizze pizze1 = PizzeFactory.createPizze(ApplePizze.class);
+        Pizze pizze1 = PizzeFactory1.createPizze(ApplePizze.class);
         System.out.println(pizze1.teast());
-        Pizze pizze2 = PizzeFactory.createPizze(PearPizze.class);
+        Pizze pizze2 = PizzeFactory1.createPizze(PearPizze.class);
         System.out.println(pizze2.teast());
         for (int i = 0; i <10 ; i++) {
-            pizze1 = PizzeFactory.createPizze(ApplePizze.class);
+            pizze1 = PizzeFactory1.createPizze(ApplePizze.class);
             System.out.println(pizze1.teast());
         }
     }
