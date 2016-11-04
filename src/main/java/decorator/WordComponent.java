@@ -10,6 +10,7 @@ public class WordComponent  implements  Component{
         this.context = context;
     }
 
+
     public void print() {
         for (int i = 0; i < 6; i++) {
             System.out.println(context);
