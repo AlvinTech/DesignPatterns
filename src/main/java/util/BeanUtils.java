@@ -21,6 +21,7 @@ public class BeanUtils {
                 String name = descriptor.getName();
                 Method method = descriptor.getReadMethod();
                 Object fieldValue =  method.invoke(bean,new Object[]{});
+                // every class will have this "class" property.
                 if(!name.equalsIgnoreCase("class")){
                     result.put(name,fieldValue);
                 }
@@ -47,7 +48,7 @@ public class BeanUtils {
                 String name = descriptor.getName();
                 Class type = descriptor.getPropertyType();
                 if(type.getName().equals("java.lang.String")){
-                    System.out.println(name);
+               //     System.out.println(name);
                 }
                 if(propMap.containsKey(name)){
                     Method method = descriptor.getWriteMethod();
