@@ -109,7 +109,7 @@ JVM在类的初始化阶段（即在Class被加载后，且被线程使用之前
 
 这个方案之所奏效，是因为内部类 InstanceHolder 将只被装载一次，所以只会创建一个instance对象。
 
-参考文献：
+####参考文献：
 1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization 
 
 2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html 
