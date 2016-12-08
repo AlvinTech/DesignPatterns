@@ -10,7 +10,7 @@ Singleton： Ensure a class has only one instance, and provide a global point of
 **效果**：Client对象无需操心是否已经存在Singleton对象实例。这是由Singleton自己控制的。
 **通用类图**：
 
-￼![Singleton 通用类图](%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-09%20%E4%B8%8A%E5%8D%889.24.58.png)
+￼![Singleton 通用类图](http://my.csdn.net/uploads/201208/05/1344151891_6713.jpg)
   Singleton 模式通用结构图
 
 #### 优点
@@ -105,7 +105,7 @@ JVM在类的初始化阶段（即在Class被加载后，且被线程使用之前
 这个方案之所奏效，是因为内部类 InstanceHolder 将只被装载一次，所以只会创建一个instance对象。
 
 参考文献：
-1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization (http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization)
-2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html (http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
+1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization
+2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html
 3. 秦小波. 设计模式之禅[M]. 机械工业出版社, 2014.
 4. (美)沙洛维(Shalloway, A. ), (美)特罗特(Trott,等. 设计模式解析: 第2版 : 修订版[M]. 人民邮电出版社, 2012.
