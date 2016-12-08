@@ -7,13 +7,16 @@ Singleton： Ensure a class has only one instance, and provide a global point of
 **意图**：希望对象只有一个实例，但没有控制对象实例化的全局对象。还希望确保所有实体使用该对象相同的实例，而无需将引用传给它们。
 
 **问题**：几个不同的客户对象需要引用同一个对象，而且希望确保这种类型的对象数目不超过一个。
+
 **解决方案**：保证一个实例。
+
 **参与者于协作者**：Client 对象只能通过getInstance 方法创建Singleton 实例。
+
 **效果**：Client对象无需操心是否已经存在Singleton对象实例。这是由Singleton自己控制的。
+
 **通用类图**：
 
-￼[Singleton 通用类图](%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-09%20%E4%B8%8A%E5%8D%889.24.58.png)
-  Singleton 模式通用结构图
+￼![Singleton 通用类图](http://my.csdn.net/uploads/201208/05/1344151891_6713.jpg)
 
 #### 优点
 1. 由于单例模式在内存中只有一个实例，减少了内存的开销，特别是一个对象需要频繁地创建、销毁时，而且创建或销毁时性能无法优化，单例模式的优势就非常明显。
@@ -88,7 +91,7 @@ Singleton： Ensure a class has only one instance, and provide a global point of
 提到在c++单例中广泛使用的double-check locking，在java中是无效的：
     “在Java编译器中，DoubleCheckSingleton类的初始化与instance变量赋值的顺序不可预料。如果一个线程在没有同步化的条件下读取instance引用，并调用这个对象的方法的话，可能会发现对象的初始化过程尚未完成，从而造成崩溃。”也就是Java编译器本身的优化工作会在构造方法实例化对象之前从构造方法返回指向该对象的指针，从而暴露了未构造完整的对象。在jdk1.5 之后，可以采用volatile 来使其生效。在Java5之后，有一个所谓的“happens-before”的概念，在每一个构造函数结束的地方都有一个freeze动作，在构造函数返回前，所有的final成员变量都要完成初始化。
 In JVMs prior to 1.5, volatile would not ensure that it worked (your mileage may vary). Under the new memory model, making the instance field volatile will "fix" the problems with double-checked locking, because then there will be a happens-before relationship between the initialization of the Something by the constructing thread and the return of its value by the thread that reads it."
-[](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html "Double-checked locking: Clever, but broken")
+
 #### Initialization On Demand Holder idiom
 JVM在类的初始化阶段（即在Class被加载后，且被线程使用之前），会执行类的初始化。在执行类的初始化期间，JVM会去获取一个锁。这个锁可以同步多个线程对同一个类的初始化。
 基于这个特性，可以实现另一种线程安全的延迟初始化方案（这个方案被称之为Initialization On Demand Holder idiom）：
@@ -107,7 +110,10 @@ JVM在类的初始化阶段（即在Class被加载后，且被线程使用之前
 这个方案之所奏效，是因为内部类 InstanceHolder 将只被装载一次，所以只会创建一个instance对象。
 
 参考文献：
-1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization (http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization)
-2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html (http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
+1. http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization 
+
+2. http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html 
+
 3. 秦小波. 设计模式之禅[M]. 机械工业出版社, 2014.
+
 4. (美)沙洛维(Shalloway, A. ), (美)特罗特(Trott,等. 设计模式解析: 第2版 : 修订版[M]. 人民邮电出版社, 2012.
